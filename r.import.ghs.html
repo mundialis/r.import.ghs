@@ -1,0 +1,60 @@
+<h2>DESCRIPTION</h2>
+
+<em>r.import.ghs</em> downloads and imports Global Human Settlement (GHS) data
+representing built-up area from the
+<a href="https://ghsl.jrc.ec.europa.eu/download.php?ds=bu">JRC-GHS</a> website.
+Data will only be imported for the current computational region.
+Three datasets are currently supported for download and import:
+<ul>
+  <li><a href="https://ghsl.jrc.ec.europa.eu/ghs_bu2019.php">GHS-BUILT</a>,
+    built-up areas derived from Landsat data, 30m resolution</li>
+  <li><a href="https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_BUILT_S1NODSM_GLOBE_R2018A/GHS_BUILT_S1NODSM_GLOBE_R2018A_3857_20/V1-0/">
+    GHS-BUILT-S1</a>, built-up areas derived from Sentinel-1 data, 10m resolution</li>
+  <li><a href="https://ghsl.jrc.ec.europa.eu/ghs_bu_s2_2018.php">GHS-BUILT-S2</a>,
+     built-up area probability map derived from Sentinel-2 data, 10m resolution</li>
+</ul>
+
+See also the <a href="https://ghsl.jrc.ec.europa.eu/documents/GHSL_Data_Package_2019.pdf?t=1478q532234372">
+  GHSL Data Package 2019 report</a> for further information on the datasets.
+
+<h2>REQUIREMENTS</h2>
+
+<h3>wget from Python3</h3>
+<div class="code"><pre>
+pip3 install wget
+</pre></div>
+
+<h2>EXAMPLES</h2>
+
+<h3>Import the GHS-BUILT-S2 dataset for the current computational region:</h3>
+<div class="code"><pre>
+r.import.ghs ghs_built_s2=ghs_built_s2_map directory=some_tempdir
+</pre></div>
+<h3>Import all datasets for the current computational region:</h3>
+<div class="code"><pre>
+r.import.ghs ghs_built=ghs_built_map ghs_built_s1=ghs_built_s1_map ghs_built_s2=ghs_built_s2_map directory=some_tempdir
+</pre></div>
+
+<h2>SEE ALSO</h2>
+
+<em>
+<a href="r.import.html">r.import</a>
+<a href="v.select.html">v.select</a>
+<a href="v.in.region.html">v.in.region</a>
+</em>
+
+<h2>REFERENCES</h2>
+
+<ul>
+  <li><a href="https://ghsl.jrc.ec.europa.eu/download.php?ds=buS2">download source</a></li>
+  <li><a href="https://ghsl.jrc.ec.europa.eu/documents/GHSL_Data_Package_2019.pdf?t=1478q532234372">GHSL Data Package 2019 report</a></li>
+</ul>
+
+<h2>AUTHORS</h2>
+
+Guido Riembauer, <a href="https://www.mundialis.de/">mundialis</a>
+
+<!--
+<p>
+<i>Last changed: $Date$</i>
+-->
