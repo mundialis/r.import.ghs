@@ -3,12 +3,12 @@
 # fail on non-zero return code from a subprocess
 set -e
 
-# download North Carolina test location if the test needs the data and run tests
+# download standard North Carolina test location if the test needs the data and run tests
 if [ "$1" == "NC" ]
 then
   g.extension g.download.location
-  g.download.location url=https://grass.osgeo.org/sampledata/north_carolina/nc_spm_full_v2alpha2.tar.gz path=/grassdb
-  g.mapset mapset=PERMANENT location=nc_spm_full_v2alpha2 -c
+  g.download.location url=https://grass.osgeo.org/sampledata/north_carolina/nc_spm_08_grass7.tar.gz path=/grassdb
+  g.mapset mapset=PERMANENT location=nc_spm_08_grass7 -c
   g.list all
 fi
 
